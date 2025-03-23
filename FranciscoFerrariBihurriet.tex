@@ -1,0 +1,253 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[margin=2cm, top=2.5cm]{geometry}
+\usepackage[english]{babel}
+\usepackage{fouriernc}
+\usepackage[T1]{fontenc}
+\usepackage[parfill]{parskip}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{multirow}
+\usepackage{titlesec}
+\usepackage[fixed]{fontawesome5}
+\usepackage[hidelinks]{hyperref}
+\usepackage{bold-extra}
+
+% Colors
+\definecolor{BackGround}      {HTML} {EDE7D9}
+\definecolor{SectionTitle}    {HTML} {D1603D}
+\definecolor{SubSectionTitle} {HTML} {688B58}
+\definecolor{ForeGround}      {HTML} {4B4237}
+\definecolor{Links}           {HTML} {247BA0}
+
+% Page style
+\fancypagestyle{MyPageStyle}{%
+    \setlength{\headheight}{0em}%
+    \fancyhead{}%
+    \fancyfoot{}%
+    \renewcommand{\headrule}{}%
+    \rfoot{\textcolor{SectionTitle}{\thepage}}%
+}%
+\pagestyle{MyPageStyle}
+\pagecolor{BackGround}
+
+% Sections style
+\titleformat{\section}
+{\bfseries \Large \color{SectionTitle}}{\thetitle.}{0.5em}
+{\vspace{0.8em} \hrule height 0.15em}
+% Subsections style
+\titleformat{\subsection}
+{\bfseries \large \color{SubSectionTitle}}{\thetitle.}{0.5em}
+{\vspace{0.4em} \hrule height 0.05em}
+% Subsubsection style
+\titleformat{\subsubsection}
+{\bfseries \normalsize \color{SubSectionTitle}}{\thetitle.}{0.5em}
+{}
+
+% Commands and document metadata
+\newcommand{\name}{Francisco Ferrari Bihurriet}
+\newcommand{\location}{Castelldefels, Catalonia, Spain}
+\newcommand{\linkedin}{/in/francisco-ferrari-bihurriet}
+
+\newcommand{\addTitle}[1]{\Huge\textbf{#1}\vspace{0.3em}}
+\newcommand{\addDetail}[2]{\faIcon[regular]{#1} & \large\lib{#2} & \\}
+
+\newcommand{\mysep}{{\Large $\mid$}\ }
+\newcommand{\titledItem}[2]{\item \textbf{#1:} #2}
+\newcommand{\myhref}[2]{\textsl{\textcolor{Links}{\href{#1}{#2}}}}
+\newcommand{\myPic}[1]{{%
+    \setlength{\fboxsep}{0em}%
+    \setlength{\fboxrule}{0.08em}%
+    \fbox{\includegraphics[width=#1, keepaspectratio]{me}}%
+}}%
+
+\newcommand{\lib}[1]{\texttt{\textbf{#1}}}
+\newcommand{\python}{\emph{Python}}
+\newcommand{\cc}{\emph{C}}
+\newcommand{\cpp}{\emph{C++}}
+
+\title{\name}
+\author{\name}
+\begin{document}
+    \thispagestyle{MyPageStyle}
+    \color{ForeGround}
+
+    % Personal Details
+    \hrule height 0.3em \vspace{0.5em}
+    \begin{center}
+        \begin{tabular}{rlr}
+            \multicolumn{2}{l}{\addTitle{\name}} & \multirow{3}{*}{\myPic{2.6cm}} \\
+            \addDetail{map}{\location}
+            \addDetail{linkedin-in}{\myhref{https://www.linkedin.com\linkedin}{\linkedin}}
+        \end{tabular}
+    \end{center}
+
+
+    \section*{About} \label{sec:about}
+    I am a senior engineer with more than 6 years of experience in software development and application security.
+    I hold a technical role in the development of \emph{Core Impact},
+    a leading penetration testing and offensive security product by \emph{HelpSystems}.
+    I write code in \python{} and \cc{}/\cpp{} on a daily basis.
+    As a professional, I am interested in low-level programing,
+    network protocols, cryptography, and security vulnerabilities,
+    including analysis and exploitation for testing purposes.
+
+    \section*{Skills} \label{sec:skills}
+    \begin{itemize}
+        \titledItem{Seek for excellence}{%
+            detail oriented person with a spirit of continuous improvement,
+            passionate, motivated and persevering
+        }
+        \titledItem{Communication}{%
+            friendly, engaged and accountable,
+            responsive in chats or email,
+            glad to take any opportunity to improve my presentation skills
+        }
+        \titledItem{Collaboration}{%
+            familiar with pair programming,
+            experience interacting with other teams to coordinate release cycles,
+            internal demos and product integrations
+        }
+        \titledItem{Planning}{%
+            autonomous assignment of tasks,
+            ability to organize and prioritize my backlog,
+            identifying intermediate milestones and reporting progress
+        }
+        \titledItem{Analytical skills}{%
+            exposure to various bug fixes through root-cause analysis,
+            combining both static and dynamic analysis with
+            creative ways to minimize the steps to reproduce
+        }
+        \titledItem{Value of automation and documentation}{%
+            proactive approach towards automating repetitive tasks and simplifying workflows,
+            writing clarity when documenting tasks or redacting defect reports,
+            recurring to diagrams or graphics when necessary
+        }
+        \titledItem{Security Mindset / Reverse Engineering}{%
+            basic usage of \emph{IDA Pro} / \emph{WinDBG} / \emph{gdb},
+            involvement in some \emph{capture-the-flag} contests,
+            reversing and exploiting toy applications
+        }
+    \end{itemize}
+
+    %\pagebreak
+    \section*{Work Experience} \label{sec:experience}
+
+    \subsection*{HelpSystems (ex Core Security)  \mysep Argentina \mysep 2015 --- Present} \label{subsec:job1}
+    I have been working at this company for more than 6 years, achieving 3 promotions.
+    Our team has shipped the last 11 releases of \emph{Core Impact}.
+
+    \subsubsection*{Sr Developer (Core Security - Help Systems) \mysep Jun 2019 --- Present}
+    \begin{itemize}
+        \item Being the most experienced engineer in the team, I usually
+        provide guidance to new hires with the onboarding and ramp-up process
+        \item Holding a technical leadership role, I became
+        a dependable point of reference for other members and teams
+        when they need to discuss architectural changes
+        or dive into the implementation details of some areas of the product
+        \item Comprehending the importance of the product quality and stability,
+        I am also involved in maintaining the product testing framework
+        and its associated testing lab composed by thousands of virtual machines
+        \item I am very active in the team chat
+        and often happy to answer any question,
+        I also take an important role in the meetings
+        when discussing how to address new requirements
+        \item In late 2020 / early 2021: led a major upgrade of
+        our modified version of the \lib{OpenSSL} library (v1.0.1 $\rightarrow$ v1.1.1),
+        from the planning phase to the final integration
+        \begin{itemize}
+            \item This upgrade also extended to our modified version of the \lib{pyOpenSSL} \python{} bindings,
+            whose upstream project had evolved from a \emph{CPython} extension to a pure-\python{} library
+            relying on the \lib{cryptography} library \lib{cffi} bindings
+            (that implied porting our patches to expose the extended APIs by our \lib{OpenSSL} modifications)
+            \item As part of this work, several \python{} libraries ended up integrated
+            into our codebase, requiring changes in our non-standard \python{} build system
+            (due to the way in which the interpreter is customized and embedded in the product)
+            \item In the end, we finished with a renewed cryptography stack,
+            removing legacy bindings and with a simpler mechanism to integrate third party libraries
+        \end{itemize}
+        \item In 2019: actively worked in the refinement of the requirements
+        for a highly prioritized update of our licensing mechanism,
+        coordinating infrastructure changes across multiple teams
+        \begin{itemize}
+            \item Helped to envision the shortest path to achieve our goal,
+            and played a key role conveying that idea
+            and convincing the team that it would work
+            \item As part of the tasks, took responsibility for modifying
+            a very legacy copy protection mechanism written in (old) \cpp{},
+            which represented the main source of uncertainty
+            regarding the feasibility of the requirement
+        \end{itemize}
+    \end{itemize}
+
+    \subsubsection*{Ssr Developer (Core Security) \mysep May 2017 --- May 2019}
+    \begin{itemize}
+        \item Rewrote a \emph{phishing} webpage cloning module to change its approach,
+        by mounting a \emph{man-in-the-middle reverse proxy}
+        (also took part in the previous design/analysis)
+        \item Worked in pairs for an urgent security patch
+        to the updates channel of our product,
+        dealing with completely unknown code
+        and a legacy unmaintained cloud infrastructure;
+        we refactored \python{} code to remove duplicated logic,
+        added tests and shipped the fix in the expected time
+        \item Started to work in multiple parts of the product,
+        fixing minor issues in components that I was less used to
+        (such as \emph{JavaScript} graphical user interface code),
+        and developing tests which required specific \emph{Linux} server configurations
+    \end{itemize}
+
+    \subsubsection*{Jr Developer (Core Security) \mysep Jan 2016 --- Apr 2017}
+    \begin{itemize}
+        \item Collaborated extending a generic mechanism
+        to remotely execute library functions on \emph{Linux} agents,
+        involving \emph{dynamically linked libraries}, function resolving mechanisms,
+        the \emph{System V Application Binary Interface} and its \emph{calling conventions}
+        \begin{itemize}
+            \item This task required writing \emph{x86-64 inline assembly} in \cc{}
+            and assembled instructions as raw bytes in \python{},
+            as well as remotely debugging our agent without symbols
+            (since it basically consists of \emph{position independent} stripped \cc{} code)
+        \end{itemize}
+        \item Performed medium-scale \cc{} and \python{} refactors to reorganize some APIs
+        and reduce boilerplate code
+    \end{itemize}
+
+    \subsubsection*{Trainee/Intern Developer (Core Security) \mysep Jan 2015 --- Dec 2015}
+    \begin{itemize}
+        \item Collaborated extending the post-exploitation infrastructure of \emph{Android} agents (in \cc{})
+        \item Implemented \cc{} structures member alignment through padding bytes,
+        in an in-house \python{} library interfacing with low-level APIs
+        (also wrote the corresponding test suite, which included a testing \emph{dynamically linked library})
+    \end{itemize}
+
+
+    \section*{Education} \label{sec:education}
+
+    \subsection*{Electronics Engineer \mysep Universidad de Buenos Aires \mysep 2010 --- Present} \label{subsec:edu1}
+    I started the \emph{Electronics Engineer} career in 2010.
+    I began my first work internship in 2015 (recommended by one of my programming teachers),
+    and realized that my professional career would evolve towards the computing area.
+    I decided to continue with \emph{Electronics Engineer}
+    since I like low-level programming, information security, and enjoy learning about hardware.
+    I reduced the academic time to focus on my professional development, and since there
+    I continued my studies in background.
+    I have completed approximately 50\% of the career up to this point.
+    \begin{itemize}
+        \titledItem{Overall grade-point average}{$7,31$}
+    \end{itemize}
+
+    \subsection*{Exploit Writing Trainings \mysep Core Security \mysep 2016 \& 2019} \label{subsec:edu2}
+    \begin{itemize}
+        \titledItem{Introduction to Windows Kernel Exploitation}{%
+            two days internal training from the exploit writing team,
+            including exercises with intentionally vulnerable drivers
+        }
+        \titledItem{Introduction to Exploits Development}{%
+            two days hands-on training from the exploit writing team,
+            covering topics like \emph{buffer overflows}, \emph{integer overflows} and \emph{use after free}
+        }
+    \end{itemize}
+
+\end{document}
