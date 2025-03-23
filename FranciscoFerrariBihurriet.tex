@@ -51,11 +51,11 @@
 \newcommand{\linkedin}{/in/francisco-ferrari-bihurriet}
 
 \newcommand{\addTitle}[1]{\Huge\textbf{#1}\vspace{0.3em}}
-\newcommand{\addDetail}[2]{\faIcon[regular]{#1} & \large\lib{#2} & \\}
+\newcommand{\addDetail}[2]{\faIcon[regular]{#1} & \large{#2} & \\}
 
 \newcommand{\mysep}{{\Large $\mid$}\ }
 \newcommand{\titledItem}[2]{\item \textbf{#1:} #2}
-\newcommand{\myhref}[2]{\textsl{\textcolor{Links}{\href{#1}{#2}}}}
+\newcommand{\myhref}[2]{\textcolor{Links}{\href{#1}{#2}}}
 \newcommand{\myPic}[1]{{%
     \setlength{\fboxsep}{0em}%
     \setlength{\fboxrule}{0.08em}%
@@ -78,6 +78,7 @@
     \begin{center}
         \begin{tabular}{rlr}
             \multicolumn{2}{l}{\addTitle{\name}} & \multirow{3}{*}{\myPic{2.6cm}} \\
+            \vspace{0.3em}
             \addDetail{map}{\location}
             \addDetail{linkedin-in}{\myhref{https://www.linkedin.com\linkedin}{\linkedin}}
             \vspace{0.3em}
@@ -138,7 +139,7 @@
     \subsection*{Red Hat \mysep Argentina/Spain \mysep 2022 --- Present} \label{subsec:job1}
     I have been working at \emph{Red Hat} for more than 3 years,
     contributing to several security libraries enhancements,
-    and participating of the quarterly Critical Patch Updates (CPU).
+    and participating of the quarterly \emph{Critical Patch Updates (CPU)}.
 
     \subsubsection*{Sr Software Engineer (Red Hat) \mysep Jan 2022 --- Present}
     \begin{itemize}
@@ -169,7 +170,7 @@
             a multi-company group where most important vendors have representation
             \item Reviews and testing of backports developed by other members of the VG
         \end{itemize}
-        \item NOTE: in 2023 I moved to Spain, keeping my role
+        \item I moved to Spain in Mar 2023, keeping my current position
     \end{itemize}
 
     \subsection*{HelpSystems (ex Core Security) \mysep Argentina \mysep 2015 --- 2021} \label{subsec:job1}
